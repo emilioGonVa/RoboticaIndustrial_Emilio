@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generador y lector de códigos</title>
+    <script type="text/javascript" src="barcode-jquery-master/sample/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="barcode-jquery-master/jquery-barcode.js"></script>
+    <script type="text/javascript" src="js/barcodeJS.js"></script>
+    <script type="text/javascript" src="js/sendPost.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="code_generator">
+            <h1 class="general_title">Generador de códigos 1D y 2D</h1>
+            <div id="generator">
+                Texto a codificar: <input type="text" id="barcodeValue" value="12345678">
+                <div id="config">
+                    <div class="config">
+                        <div class="title">Tipo</div>
+                        <div class="typeSelector">
+                            <input type="radio" name="btype" id="code11" value="code11"><label for="code11"></label>Barras</label>
+                            <input type="radio" name="btype" id="datamatrix" value="datamatrix"><label for="datamatrix">QR</label>
+                        </div>
+                    </div>
+
+                    <div class="config">
+                        <div class="barcode1D">
+                            Ancho de barra: <input type="text" id="barWidth" value="5" size="1"> Alto de barra: <input type="text" id="barHeight" value="50" size="1"><br />
+                        </div>
+                        <div class="barcode2D">
+                            Tamaño del módulo: <input type="text" id="moduleSize" value="15" size="2"><br />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submit">
+                    <input type="button" onclick="generateBarcode();" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generar código&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                </div>
+            </div>
+            <div id="barcodeTarget" class="barcodeTarget"></div>
+            <canvas id="canvasTarget" width="150" height="1"></canvas>
+
+        </div>
+        <div class="code_reader">
+            <h1 class="general_title">Lector de códigos</h1>
+            <label for="codigo">Leer ID</label>
+            <input type="text" id="codigo">
+            <input type="submit" id="sendCode" onclick="sendPost();">
+            <div id="demo"></div>
+        </div>
+</body>
+
+</html>

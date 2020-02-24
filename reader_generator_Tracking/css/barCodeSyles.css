@@ -1,0 +1,36 @@
+#config {
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.config {
+    float: center;
+    width: 160px;
+    height: 80px;
+    border: 1px solid #A7F;
+    margin-left: 10px;
+}
+
+.config .title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.config .barcode2D,
+#miscCanvas {
+    display: none;
+}
+
+#submit {
+    clear: both;
+}
+
+#barcodeTarget,
+#canvasTarget {
+    margin-top: 5px;
+}
+
+#columnas {
+    column-count: 2;
+    column-gap: 100px;
+}
